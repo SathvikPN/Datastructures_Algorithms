@@ -26,5 +26,9 @@ class ArrayStack():
             return self._stack.pop()
 
 if __name__=='__main__':
-    pass
+    # pass
+    a = ArrayStack()
+    a.push(1)
+    a.push(2)
+    print(a.is_empty(), len(a))
 

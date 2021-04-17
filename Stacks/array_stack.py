@@ -78,8 +78,8 @@ if __name__ == '__main__': # condition
     for i in range(3):
         print(f"Pop from a {a.pop()}     stack empty? {a.is_empty()}")
 
-    #s.push(1)
-    #s.push(2) # Error
+    # s.push(1)
+    # s.push(2) # Error
     # ArrayStack.StackFull: Initialised stack capacity [1]
     
     #print(s.pop()) # pops value 1

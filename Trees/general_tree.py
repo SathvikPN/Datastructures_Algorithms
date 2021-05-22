@@ -129,6 +129,49 @@ class Tree():
 
 
 
+# POST-ORDER Tree Traversal ---------------------------------------------------------------------------
+    # Algorithm postorder(T, p):
+    #     for each child c in T.children(p) do
+    #         postorder(T, c) {recursively traverse the subtree rooted at c}
+    #     perform the “visit” action for position p
+
+    def postorder(self):
+        """ Generate a postorder iteration of positions in the tree. """
+        if not self.is_empty():
+            for p in self._subtree_postorder(self.root()):
+                yield p
+    
+    def _subtree_postorder(self, p):
+        """ Generate a postorder iteration of positions in subtree rooted at p. """
+        for c in self.children(p):
+            for other in self._subtree_postorder(c):
+                yield other
+        yield p     # visit p after its subtrees
+
+
+
+# BREADTH FIRST Iteration -----------------------------------------------------------------------
+    # Algorithm breadthfirst(T):
+    #     Initialize queue Q to contain T.root( )
+    #     while Q not empty do
+    #         p = Q.dequeue( ) {p is the oldest entry in the queue}
+    #         perform the “visit” action for position p
+    #         for each child c in T.children(p) do
+    #             Q.enqueue(c) {add p’s children to the end of the queue for later visits}
+
+    def breadthfirst(self):
+        """ Generate a breadth-first iteration of the positions of the tree """
+        if not self.is_empty():
+            fringe = LinkedQueue()      # known positions not yet yielded
+            fringe.enqueue(self.root()) # starting with the root
+
+            while not fringe.is empty():
+                p = fringe.dequeue( )   # remove from front of the queue
+                yield p                 # report 
+
+                for c in self.children(p):
+                    fringe.enqueue(c) # add children to back of queue
+
 
 
 

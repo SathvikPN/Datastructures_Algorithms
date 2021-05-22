@@ -1,3 +1,6 @@
+from typing import AwaitableGenerator
+
+
 class Tree():
     """ Abstract base class representing a tree structure """
 
@@ -84,3 +87,48 @@ class Tree():
             p = self.root()
         
         return self._height2(p)     # start _height2 recursion
+
+
+
+    
+    def __iter__(self):
+        """ Generate an iteration of the tree s elements """
+        for p in self.positions():
+            yield p.element()
+
+        # To implement the positions method, we have a choice of tree traversal algorithms
+
+    def positions(self):
+        """ Generate an iteration of the tree s positions """
+        return self.preorder()      # return entire preorder iteration
+
+
+
+
+
+# PRE-ORDER Tree Traversal --------------------------------------------------------------------------
+    # Algorithm preorder(T, p):
+    #     perform the “visit” action for position p
+    #     for each child c in T.children(p) do
+    #         preorder(T, c) {recursively traverse the subtree rooted at c}
+
+    def preorder(self):
+        """ Generate a preorder iteration of positions in the tree """
+        if not self.is_empty():
+            for p in self._subtree_preorder(self.root()): # start recursion
+                yield p
+    
+    def _subtree_preorder(self, p):
+        """ Generate a preorder iteration of positions in subtree rooted at p """
+        
+        yield p     # visit p before its subtrees
+
+        for c in self.children(p):
+            for other in self._subtree_preorder(c):
+                yield other
+
+
+
+
+
+

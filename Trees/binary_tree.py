@@ -45,7 +45,6 @@ class BinaryTree(Tree):
             yield self.right(p)
 
     
-
 # IN-ORDER Tree traversal --------------------------------------------------------------
 
     # Algorithm inorder(p):

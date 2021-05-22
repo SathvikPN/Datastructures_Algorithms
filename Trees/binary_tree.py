@@ -43,3 +43,37 @@ class BinaryTree(Tree):
         
         if self.right(p) is not None:
             yield self.right(p)
+
+    
+
+# IN-ORDER Tree traversal --------------------------------------------------------------
+
+    # Algorithm inorder(p):
+    #     if p has a left child lc then
+    #         inorder(lc) {recursively traverse the left subtree of p}
+    # 
+    #     perform the “visit” action for position p
+    # 
+    #     if p has a right child rc then
+    #         inorder(rc) {recursively traverse the right subtree of p}
+
+    def inorder(self):
+        """ Generate an inorder iteration of positions in the tree """
+        if not self.is_empty():
+            for p in self._subtree_inorder(self.root()):
+                yield p
+
+    def _subtree_inorder(self, p):
+        """ Generate an inorder iteration of positions in subtree rooted at p """
+
+        # if left child exists, traverse its subtree
+        if self.left(p) is not None: 
+            for other in self. subtree inorder(self.left(p)):
+                yield other
+        
+        yield p
+
+        # if right child exists, traverse its subtree
+        if self.right(p) is not None:
+            for other in self. subtree inorder(self.right(p)):
+                yield other

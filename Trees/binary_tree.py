@@ -77,3 +77,9 @@ class BinaryTree(Tree):
         if self.right(p) is not None:
             for other in self. subtree inorder(self.right(p)):
                 yield other
+
+    
+    # override inherited version to make inorder the default
+    def positions(self):
+        """ Generate an iteration of the tree s positions """
+        return self.inorder()    # make inorder the default

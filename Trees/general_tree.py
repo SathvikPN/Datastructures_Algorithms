@@ -107,6 +107,7 @@ class Tree():
 
 
 # PRE-ORDER Tree Traversal --------------------------------------------------------------------------
+
     # Algorithm preorder(T, p):
     #     perform the “visit” action for position p
     #     for each child c in T.children(p) do
@@ -130,6 +131,7 @@ class Tree():
 
 
 # POST-ORDER Tree Traversal ---------------------------------------------------------------------------
+
     # Algorithm postorder(T, p):
     #     for each child c in T.children(p) do
     #         postorder(T, c) {recursively traverse the subtree rooted at c}
@@ -151,6 +153,7 @@ class Tree():
 
 
 # BREADTH FIRST Iteration -----------------------------------------------------------------------
+
     # Algorithm breadthfirst(T):
     #     Initialize queue Q to contain T.root( )
     #     while Q not empty do

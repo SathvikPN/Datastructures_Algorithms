@@ -1,5 +1,5 @@
+# ChainMap groups multiple dicts or other mappings together to create a single, updateable view.
 from collections import ChainMap  
-     
      
 d1 = {'a': 1, 'b': 2} 
 d2 = {'c': 3, 'd': 4} 

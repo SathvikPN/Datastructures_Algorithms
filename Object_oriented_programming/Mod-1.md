@@ -21,8 +21,13 @@ Object oriented programming: organized around data ("data controlling access to 
 - possible for one object to be a specific instance of a more general case
 
 ---
+**Classes and Objects**
+- A class declaration defines a new type that links code and data.
+- a class is a logical abstraction, but an object has physical existence (instance of a class)
+- By default, functions and data declared within a class are `private` to that class.
+- Others: `public` `protected`(private except for it's subclasses)
 
-**Constructor and Destructor**
+**Constructor and Destructor (include: Parameterised constructor, Copy Constructor**
  - automatic initialization of obj via constructor function
  - A constructor is a special function that is a member of a class and has the same name as that class.
  - An object's constructor is automatically called when the object is created. (when obj declaration executed)
@@ -30,4 +35,12 @@ Object oriented programming: organized around data ("data controlling access to 
  - constructors, destructors do not have return values and are public. [Private Constructor Destructor](https://www.geeksforgeeks.org/can-constructor-private-cpp/)
  - Destructor never takes parameters. Constructor can.
 Code example: Stack class implementation.
+
+Parameterised Constructor: params to initialise obj.
+```cpp
+myclass ob(1,2);
+myclass ob = myclass(1,2);
+
+myclass ob = 1; // only 1 param case
+```
 

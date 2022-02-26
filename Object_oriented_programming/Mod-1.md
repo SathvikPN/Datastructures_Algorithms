@@ -43,4 +43,47 @@ myclass ob = myclass(1,2);
 
 myclass ob = 1; // only 1 param case
 ```
+---
 
+**`this` pointer**
+- When a member function is called, it is automatically passed an implicit argument that is a pointer to the invoking object.
+- Important when: operators overloaded. member func utilise pointer to obj which invoked it.
+- Points: 
+- friend functions are not members of a class and, therefore, are not passed a `this` pointer
+- static member functions do not have a `this` pointer.
+
+---
+
+**Friend classes**
+- friend class and all of its member functions have access to the private members defined within the other class.
+- it only has access to names defined within the other class. It does not inherit the other class.
+- members of the first class do not become members of the friend class.
+
+```cpp
+// Using a friend class.
+#include <iostream>
+using namespace std;
+class TwoValues 
+{
+    int a,b;
+public:
+    TwoValues(int i, int j) { a = i; b = j; }
+    friend class Min;
+};
+
+class Min 
+{
+public:
+    int min(TwoValues x) {return x.a < x.b ? x.a : x.b;};
+    /* class Min has access to the private variables 
+    a and b declared within the TwoValues class.*/
+};
+
+int main()
+{
+    TwoValues ob(10, 20);
+    Min m;
+    cout << m.min(ob);
+    return 0;
+}
+```

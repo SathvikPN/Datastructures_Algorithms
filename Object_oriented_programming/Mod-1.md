@@ -22,3 +22,12 @@ Object oriented programming: organized around data ("data controlling access to 
 
 ---
 
+**Constructor and Destructor**
+ - automatic initialization of obj via constructor function
+ - A constructor is a special function that is a member of a class and has the same name as that class.
+ - An object's constructor is automatically called when the object is created. (when obj declaration executed)
+ - Destructor: perform some action or actions when obj is destroyed. (deallocate the allocated memory or close an opened file)
+ - constructors, destructors do not have return values and are public. [Private Constructor Destructor](https://www.geeksforgeeks.org/can-constructor-private-cpp/)
+ - Destructor never takes parameters. Constructor can.
+Code example: Stack class implementation.
+

@@ -43,6 +43,20 @@ myclass ob = myclass(1,2);
 
 myclass ob = 1; // only 1 param case
 ```
+
+Copy Constructor: (forms of an overloaded constructor)
+
+- By default, when one object is used to initialize another, C++ performs a bitwise copy
+- `Myclass B = A;` If bitwise copy, B using same piece of memory allocated to A. Destructor frees memory twice.
+- copy constructor bypasses the default bitwise copy.
+- It is permissible for a copy constructor to have additional parameters as long as they have default arguments defined for them. However, in all cases the first parameter must be a reference to the object doing the initializing
+- copy constructor is called only for initializations
+```cpp
+classname (const classname &obj){
+// body
+}
+```
+
 ---
 
 **`this` pointer**

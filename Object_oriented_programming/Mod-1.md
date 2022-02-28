@@ -101,3 +101,23 @@ int main()
     return 0;
 }
 ```
+
+**Static Members**
+- static, you are telling the compiler that only one copy of that variable will exist and that all objects of the class will share that variable. 
+- static data member within a class, you are not defining it. must provide a global definition
+for it elsewhere, outside the class.
+- redeclaring the static variable using the scope resolution operator to identify the class to which it belongs
+- A static member variable exists before any object of its class is created
+
+Static Member Function
+- may only directly refer to other static members of the class
+- does not have a this pointer.
+- There cannot be a static and a non-static version of the same function
+- cannot be declared as const or volatile.
+
+Operator Overloading using friend function
+```cpp
+// Now, + is overloaded using friend function.
+loc operator+(loc op1, loc op2)
+```
+

@@ -11,6 +11,8 @@ void f(int p[]); // error, *p is same as p[]
 **Friend function**
 -  A friend function has access to all private and protected members of the class for which it is a friend.
 -  called without the use of the dot operator.
+-  a derived class does not inherit friend functions.
+-  friend functions may not have a storage-class specifier. That is, they may not be declared as `static` or `extern`
 
 **Inline functions**
 - short functions that are not actually called; rather, their code is expanded in line at the point of each invocation
